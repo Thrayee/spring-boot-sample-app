@@ -1,3 +1,6 @@
+#!/usr/bin/env groovy
+import hudson.model.*
+    
 pipeline {
     // run on jenkins nodes tha has java 8 label
     //agent { label 'java8' }
