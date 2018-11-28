@@ -188,7 +188,7 @@ pipeline {
                     }
                 }
             }
-        }
+        }*/
         stage('ACC E2E tests') {
             when {
                 // check if branch is master
