@@ -1,7 +1,12 @@
 pipeline {
     // run on jenkins nodes tha has java 8 label
     //agent { label 'java8' }
-    agent { docker }
+    agent {
+        docker {
+            image 'maven:3-alpine'
+            args '-v $HOME/.m2:/root/.m2'
+        }
+    }
     // global env variables
     environment {
         EMAIL_RECIPIENTS = 'pkomateedi@teksystems.com'
