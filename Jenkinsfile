@@ -1,7 +1,7 @@
 pipeline {
     // run on jenkins nodes tha has java 8 label
     //agent { label 'java8' }
-    agent docker
+    agent { docker }
     // global env variables
     environment {
         EMAIL_RECIPIENTS = 'pkomateedi@teksystems.com'
