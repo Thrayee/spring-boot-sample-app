@@ -43,7 +43,7 @@ pipeline {
 
             }
         }
-        stage('Integration tests') {
+        /*stage('Integration tests') {
             // Run integration test
             steps {
                 script {
@@ -59,7 +59,7 @@ pipeline {
                 // cucumber reports collection
                 cucumber buildStatus: null, fileIncludePattern: '**/cucumber.json', jsonReportDirectory: 'target', sortingMethod: 'ALPHABETICAL'
             }
-        }
+        }*/
         stage('Sonar scan execution') {
             // Run the sonar scan
             steps {
@@ -87,7 +87,7 @@ pipeline {
                 }
             }
         }
-        stage('Development deploy approval and deployment') {
+        /*stage('Development deploy approval and deployment') {
             steps {
                 script {
                     if (currentBuild.result == null || currentBuild.result == 'SUCCESS') {
@@ -113,8 +113,8 @@ pipeline {
                     }
                 }
             }
-        }
-        stage('DEV sanity check') {
+        }*/
+        /*stage('DEV sanity check') {
             steps {
                 // give some time till the deployment is done, so we wait 45 seconds
                 sleep(45)
@@ -131,8 +131,8 @@ pipeline {
                     }
                 }
             }
-        }
-        stage('Release and publish artifact') {
+        }*/
+        /*stage('Release and publish artifact') {
             when {
                 // check if branch is master
                 branch 'master'
@@ -160,8 +160,8 @@ pipeline {
                     }
                 }
             }
-        }
-        stage('Deploy to Acceptance') {
+        }*/
+        /*stage('Deploy to Acceptance') {
             when {
                 // check if branch is master
                 branch 'master'
@@ -191,8 +191,8 @@ pipeline {
                     }
                 }
             }
-        }
-        stage('ACC E2E tests') {
+        }*/
+        /*stage('ACC E2E tests') {
             when {
                 // check if branch is master
                 branch 'master'
@@ -215,7 +215,7 @@ pipeline {
                 }
             }
         }
-    }
+    }*/
     /*post {
         // Always runs. And it runs before any of the other post conditions.
         cleanup {
