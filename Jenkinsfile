@@ -14,7 +14,7 @@ pipeline {
             steps {
                 // Run the maven build
                 script {
-                    echo 'Pulling...' + env.BRANCH_NAME
+                    //echo 'Pulling...' + env.BRANCH_NAME
                     def mvnHome = tool 'maven3'
                     if (isUnix()) {
                         def targetVersion = getDevVersion()
