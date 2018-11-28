@@ -11,8 +11,7 @@ pipeline {
                     //echo 'Pulling...' + env.BRANCH_NAME
                     def mvnHome = tool 'maven3'
                     if (isUnix()) {
-                        //def targetVersion = getDevVersion()
-                        def targetversion = "1.0.0-SNAPSHOT"
+                        def targetVersion = getDevVersion()
                         print 'target build version...'
                         print targetVersion
                         sh "'${mvnHome}/bin/mvn' -Dintegration-tests.skip=true -Dbuild.number=${targetVersion} clean package"
