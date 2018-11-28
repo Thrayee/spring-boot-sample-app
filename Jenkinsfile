@@ -1,5 +1,5 @@
 #!/usr/bin/env groovy
-//import hudson.model.*
+import hudson.model.*
     
 pipeline {
     agent any
@@ -11,7 +11,8 @@ pipeline {
                     //echo 'Pulling...' + env.BRANCH_NAME
                     def mvnHome = tool 'maven3'
                     if (isUnix()) {
-                        def targetVersion = getDevVersion()
+                        //def targetVersion = getDevVersion()
+                        targetversion = "1.0.0-SNAPSHOT"
                         print 'target build version...'
                         print targetVersion
                         sh "'${mvnHome}/bin/mvn' -Dintegration-tests.skip=true -Dbuild.number=${targetVersion} clean package"
