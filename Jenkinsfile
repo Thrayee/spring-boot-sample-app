@@ -61,7 +61,7 @@ pipeline {
             // Run the sonar scan
             steps {
                 script {
-                    def mvnHome = tool 'maven'
+                    def mvnHome = tool 'maven3'
                     withSonarQubeEnv {
 
                         sh "'${mvnHome}/bin/mvn'  verify sonar:sonar -Dintegration-tests.skip=true -Dmaven.test.failure.ignore=true"
@@ -129,7 +129,7 @@ pipeline {
                 }
             }
         }
-        /*stage('Release and publish artifact') {
+        stage('Release and publish artifact') {
             when {
                 // check if branch is master
                 branch 'master'
@@ -188,7 +188,7 @@ pipeline {
                     }
                 }
             }
-        }*/
+        }
         stage('ACC E2E tests') {
             when {
                 // check if branch is master
