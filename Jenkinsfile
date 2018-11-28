@@ -215,9 +215,9 @@ pipeline {
     }
     post {
         // Always runs. And it runs before any of the other post conditions.
-        always {
+        cleanup {
             // Let's wipe out the workspace before we finish!
-            //deleteDir()
+            deleteDir()
         }
         success {
             sendEmail("Successful");
