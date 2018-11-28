@@ -10,7 +10,6 @@ pipeline {
         EMAIL_RECIPIENTS = 'pkomateedi@teksystems.com'
     }
     stages {
-
         stage('Build & unit testing') {
             steps {
                 // Run the maven build
@@ -37,7 +36,6 @@ pipeline {
                         archive 'target*//*.jar'
                     }
                 }
-
             }
         }
         
