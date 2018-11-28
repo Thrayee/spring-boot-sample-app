@@ -1,5 +1,5 @@
 #!/usr/bin/env groovy
-import hudson.model.*
+//import hudson.model.*
     
 pipeline {
     // run on jenkins nodes tha has java 8 label
@@ -73,4 +73,3 @@ pipeline {
         }
     }
 }
-        
