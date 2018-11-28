@@ -43,7 +43,7 @@ pipeline {
 
             }
         }
-        /*stage('Integration tests') {
+        stage('Integration tests') {
             // Run integration test
             steps {
                 script {
@@ -59,7 +59,7 @@ pipeline {
                 // cucumber reports collection
                 cucumber buildStatus: null, fileIncludePattern: '**/cucumber.json', jsonReportDirectory: 'target', sortingMethod: 'ALPHABETICAL'
             }
-        }*/
+        }
         stage('Sonar scan execution') {
             // Run the sonar scan
             steps {
