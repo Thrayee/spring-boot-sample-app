@@ -50,10 +50,7 @@ pipeline {
                     } else {
                         bat(/"${mvnHome}\bin\mvn" verify -Dunit-tests.skip=true/)
                     }
-
                 }
-                // cucumber reports collection
-                cucumber buildStatus: null, fileIncludePattern: '**/cucumber.json', jsonReportDirectory: 'target', sortingMethod: 'ALPHABETICAL'
             }
         }*/
         stage('Sonar scan execution') {
