@@ -26,7 +26,7 @@ pipeline {
                         developmentArtifactVersion = "${pom.version}-${targetVersion}"
                         print pom.version
                         // execute the unit testing and collect the reports
-                        junit '${WORKSPACE}/target/reports/TEST-*.xml'
+                        sh "mvn test"
                         
                         //archive 'target*//*.jar'
                     } else {
