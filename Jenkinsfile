@@ -61,7 +61,8 @@ pipeline {
                     def mvnHome = tool 'maven3'
                     withSonarQubeEnv {
 
-                        sh "'${mvnHome}/bin/mvn'  verify sonar:sonar -Dintegration-tests.skip=true -Dmaven.test.failure.ignore=true"
+                        //sh "'${mvnHome}/bin/mvn'  verify sonar:sonar -Dintegration-tests.skip=true -Dmaven.test.failure.ignore=true"
+                        mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.5.0.1254:sonar
                     }
                 }
             }
@@ -81,7 +82,7 @@ pipeline {
                 }
             }
         }
-        stage('Development deploy approval and deployment') {
+        /*stage('Development deploy approval and deployment') {
             steps {
                 script {
                     if (currentBuild.result == null || currentBuild.result == 'SUCCESS') {
@@ -107,8 +108,8 @@ pipeline {
                     }
                 }
             }
-        }
-        stage('DEV sanity check') {
+        }*/
+        /*stage('DEV sanity check') {
             steps {
                 // give some time till the deployment is done, so we wait 45 seconds
                 sleep(45)
@@ -125,8 +126,8 @@ pipeline {
                     }
                 }
             }
-        }
-        stage('Release and publish artifact') {
+        }*/
+        /*stage('Release and publish artifact') {
             when {
                 // check if branch is master
                 branch 'master'
@@ -154,8 +155,8 @@ pipeline {
                     }
                 }
             }
-        }
-        stage('Deploy to Acceptance') {
+        }*/
+        /*stage('Deploy to Acceptance') {
             when {
                 // check if branch is master
                 branch 'master'
@@ -185,8 +186,8 @@ pipeline {
                     }
                 }
             }
-        }
-        stage('ACC E2E tests') {
+        }*/
+        /*stage('ACC E2E tests') {
             when {
                 // check if branch is master
                 branch 'master'
@@ -209,7 +210,7 @@ pipeline {
                 }
             }
         }
-    }
+    }*/
     post {
         // Always runs. And it runs before any of the other post conditions.
         always {
