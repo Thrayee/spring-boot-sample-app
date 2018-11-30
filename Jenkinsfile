@@ -62,7 +62,7 @@ pipeline {
                     withSonarQubeEnv {
 
                         //sh "'${mvnHome}/bin/mvn'  verify sonar:sonar -Dintegration-tests.skip=true -Dmaven.test.failure.ignore=true"
-                        sh "mvn clean install"
+                        sh "mvn clean install -U"
                         sh "mvn sonar:sonar"
                     }
                 }
