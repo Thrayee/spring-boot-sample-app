@@ -62,7 +62,7 @@ pipeline {
                     withSonarQubeEnv {
 
                         //sh "'${mvnHome}/bin/mvn'  verify sonar:sonar -Dintegration-tests.skip=true -Dmaven.test.failure.ignore=true"
-                        mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.5.0.1254:sonar
+                        sh "mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.5.0.1254:sonar"
                     }
                 }
             }
