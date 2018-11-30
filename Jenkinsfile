@@ -219,7 +219,7 @@ pipeline {
             //deleteDir()
         //}
         success {
-            sendEmail("Successful");
+            sendEmail("Build Successful");
         }
         unstable {
             sendEmail("Unstable");
