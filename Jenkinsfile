@@ -26,7 +26,8 @@ pipeline {
                         developmentArtifactVersion = "${pom.version}-${targetVersion}"
                         print pom.version
                         // execute the unit testing and collect the reports
-                        junit '**//*target/surefire-reports/TEST-*.xml'
+                        junit '${WORKSPACE}/target/reports/TEST-*.xml'
+                        
                         //archive 'target*//*.jar'
                     } else {
                         bat(/"${mvnHome}\bin\mvn" -Dintegration-tests.skip=true clean package/)
