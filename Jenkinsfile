@@ -222,10 +222,10 @@ pipeline {
             sendEmail("Build Successful");
         }
         unstable {
-            sendEmail("Unstable");
+            sendEmail("Build Unstable");
         }
         failure {
-            sendEmail("Failed");
+            sendEmail("Build Failed");
         }
     }
 
