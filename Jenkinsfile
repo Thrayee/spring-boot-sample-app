@@ -26,8 +26,8 @@ pipeline {
                         developmentArtifactVersion = "${pom.version}-${targetVersion}"
                         print pom.version
                         // execute the unit testing and collect the reports
-                        //sh "mvn test"
-                        junit '**//*target/surefire-reports/TEST-*.xml'
+                        sh "mvn test"
+                        //junit '**//*target/surefire-reports/TEST-*.xml'
                         
                         archive 'target*//*.jar'
                     } else {
