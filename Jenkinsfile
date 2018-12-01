@@ -31,7 +31,7 @@ pipeline {
                         
                         //junit '**//*target/surefire-reports/TEST-*.xml'
                         
-                        archive 'target*//*.jar'
+                        archiveArtifacts 'target*//*.jar'
                     } else {
                         bat(/"${mvnHome}\bin\mvn" -Dintegration-tests.skip=true clean package/)
                         def pom = readMavenPom file: 'pom.xml'
