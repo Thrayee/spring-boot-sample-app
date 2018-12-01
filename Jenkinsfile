@@ -26,9 +26,10 @@ pipeline {
                         developmentArtifactVersion = "${pom.version}-${targetVersion}"
                         print pom.version
                         // execute the unit testing and collect the reports
-                        sh "mvn test"
+                        //sh "mvn test"
+                        junit '**//*target/surefire-reports/TEST-*.xml'
                         
-                        //archive 'target*//*.jar'
+                        archive 'target*//*.jar'
                     } else {
                         bat(/"${mvnHome}\bin\mvn" -Dintegration-tests.skip=true clean package/)
                         def pom = readMavenPom file: 'pom.xml'
