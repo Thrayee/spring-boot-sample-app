@@ -7,7 +7,7 @@ pipeline {
     }
     stages {
 
-        stage('Build with unit testing') {
+        stage('Build & unit testing') {
             steps {
                 // Run the maven build
                 script {
