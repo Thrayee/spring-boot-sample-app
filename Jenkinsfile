@@ -26,6 +26,7 @@ pipeline {
                         developmentArtifactVersion = "${pom.version}-${targetVersion}"
                         print pom.version
                         sh "mvn clean test"
+                        sh "mvn surefire-report:report"
                         sh "'${mvnHome}/bin/mvn' -Dintegration-tests.skip=true -Dbuild.number=${targetVersion} clean package"
                         // execute the unit testing and collect the reports
                         
