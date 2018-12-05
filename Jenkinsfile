@@ -24,7 +24,6 @@ pipeline {
                         // get the current development version
                         developmentArtifactVersion = "${pom.version}-${targetVersion}"
                         print pom.version
-                        //sh "mvn clean test"
                         //sh "'${mvnHome}/bin/mvn' -Dintegration-tests.skip=true -Dbuild.number=${targetVersion} clean package"
                         // execute the unit testing and collect the reports
                         //sh "mvn surefire:test"
