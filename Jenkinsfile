@@ -28,7 +28,8 @@ pipeline {
                         sh "'${mvnHome}/bin/mvn' -Dintegration-tests.skip=true -Dbuild.number=${targetVersion} clean package"
                         // execute the unit testing and collect the reports
                         sh "mvn surefire:test"
-                        sh "mvn surefire-report:report"                       
+                        //sh "mvn surefire-report:report"                       
+                        sh "mvn site"
                         //junit '**//target/site/surefire-reports/TEST-*.xml'
                         archiveArtifacts 'target*//*.jar'
                     } else {
