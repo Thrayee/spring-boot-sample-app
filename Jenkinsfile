@@ -26,10 +26,10 @@ pipeline {
                         print pom.version
                         //sh "'${mvnHome}/bin/mvn' -Dintegration-tests.skip=true -Dbuild.number=${targetVersion} clean package"
                         // execute the unit testing and collect the reports
-                        sh "mvn surefire:test"
+                        //sh "mvn surefire:test"
                         //sh "mvn surefire-report:report"                       
                         sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean package"
-                        junit '**//target/surefire-reports/TEST-*.xml'
+                        //junit '**//target/surefire-reports/TEST-*.xml'
                         archiveArtifacts 'target/*.jar'
                     } else {
                         bat(/"${mvnHome}\bin\mvn" -Dintegration-tests.skip=true clean package/)
