@@ -14,16 +14,16 @@ pipeline {
                     // Get the Maven tool.
                     // ** NOTE: This 'M3' Maven tool must be configured
                     // **       in the global configuration.
-                    echo 'Pulling...' + env.BRANCH_NAME
+                    //echo 'Pulling...' + env.BRANCH_NAME
                     def mvnHome = tool 'maven3'
                     if (isUnix()) {
-                        def targetVersion = getDevVersion()
-                        print 'target build version...'
-                        print targetVersion
-                        def pom = readMavenPom file: 'pom.xml'
+                        //def targetVersion = getDevVersion()
+                        //print 'target build version...'
+                        //print targetVersion
+                        //def pom = readMavenPom file: 'pom.xml'
                         // get the current development version
-                        developmentArtifactVersion = "${pom.version}-${targetVersion}"
-                        print pom.version
+                        //developmentArtifactVersion = "${pom.version}-${targetVersion}"
+                        //print pom.version
                         //sh "'${mvnHome}/bin/mvn' -Dintegration-tests.skip=true -Dbuild.number=${targetVersion} clean package"
                         // execute the unit testing and collect the reports
                         //sh "mvn surefire:test"
