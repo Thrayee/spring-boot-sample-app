@@ -7,7 +7,7 @@ pipeline {
     }
     stages {
 
-        stage('Build & unit testing') {
+        stage('Build with unit testing') {
             steps {
                 // Run the maven build
                 script {
@@ -62,9 +62,7 @@ pipeline {
                 script {
                     def mvnHome = tool 'maven3'
                     withSonarQubeEnv {
-
                         //sh "'${mvnHome}/bin/mvn'  verify sonar:sonar -Dintegration-tests.skip=true -Dmaven.test.failure.ignore=true"
-                        //sh "mvn clean install -Dskiptests=true"
                         sh "mvn sonar:sonar"
                     }
                 }
@@ -73,7 +71,7 @@ pipeline {
         // waiting for sonar results based into the configured web hook in Sonar server which push the status back to jenkins
         stage('Sonar scan result check') {
             steps {
-                timeout(time: 2, unit: 'MINUTES') {
+                timeout(time: 1, unit: 'MINUTES') {
                     retry(3) {
                         script {
                             def qg = waitForQualityGate()
