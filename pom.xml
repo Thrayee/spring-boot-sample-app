@@ -218,9 +218,7 @@
                 <configuration>
                     <archive>
                     <manifest>
-                    <addClasspath>true</addClasspath>
-                    <classpathPrefix>lib/</classpathPrefix>
-                    <mainClass>com.test.sampleapp</mainClass>
+                    <addClasspath>true</addClasspath>  
                     </manifest>
                     </archive>
                 </configuration>
