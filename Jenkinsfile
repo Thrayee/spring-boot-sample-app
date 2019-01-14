@@ -212,7 +212,7 @@ pipeline {
             }
         }*/
     }
-    post {
+    /* post {
         // Always runs. And it runs before any of the other post conditions.
         //always {
             // Let's wipe out the workspace before we finish!
@@ -227,7 +227,7 @@ pipeline {
         failure {
             sendEmail("Build Failed");
         }
-    }
+    } */
 
 // The options directive is for configuration that applies to the whole job.
     options {
