@@ -26,10 +26,10 @@ pipeline {
                         print pom.version
                         //sh "'${mvnHome}/bin/mvn' -Dintegration-tests.skip=true -Dbuild.number=${targetVersion} clean package"
                         // execute the unit testing and collect the reports
-                        //sh "mvn surefire:test"
-                        //sh "mvn surefire-report:report"                       
+                        sh "mvn surefire:test"
+                        sh "mvn surefire-report:report"                       
                         sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean package"
-                        //junit '**//target/surefire-reports/TEST-*.xml'
+                        junit '**//target/surefire-reports/TEST-*.xml'
                         archiveArtifacts 'target/*.jar'
                     } else {
                         bat(/"${mvnHome}\bin\mvn" -Dintegration-tests.skip=true clean package/)
@@ -42,11 +42,11 @@ pipeline {
 
             }
         }
-        /*stage('Integration tests') {
+        stage('Integration tests') {
             // Run integration test
             steps {
                 script {
-                    def mvnHome = tool 'maven3'
+                    def mvnHome = tool 'M3'
                     if (isUnix()) {
                         // just to trigger the integration test without unit testing
                         sh "'${mvnHome}/bin/mvn'  verify -Dunit-tests.skip=true"
@@ -55,14 +55,14 @@ pipeline {
                     }
                 }
             }
-        }*/
+        }
         stage('Sonar scan execution') {
             // Run the sonar scan
             steps {
                 script {
                     def mvnHome = tool 'M3'
                     withSonarQubeEnv {
-                        //sh "'${mvnHome}/bin/mvn'  verify sonar:sonar -Dintegration-tests.skip=true -Dmaven.test.failure.ignore=true"
+                        sh "'${mvnHome}/bin/mvn'  verify sonar:sonar -Dintegration-tests.skip=true -Dmaven.test.failure.ignore=true"
                         sh "${mvnHome}/bin/mvn sonar:sonar"
                     }
                 }
