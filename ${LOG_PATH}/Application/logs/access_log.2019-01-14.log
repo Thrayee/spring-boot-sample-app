@@ -1,0 +1,2 @@
+127.0.0.1 - - [14/Jan/2019:11:16:28 -0600] "GET /actuator/health HTTP/1.1" 200 25
+127.0.0.1 - - [14/Jan/2019:11:16:28 -0600] "GET /application/version HTTP/1.1" 200 3

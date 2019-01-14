@@ -1,0 +1,17 @@
+com/test/sampleapp/web/ErrorHandler$ERROR_CODE.class
+com/test/sampleapp/exceptions/ResourceNotFoundException.class
+com/test/sampleapp/web/ApplicationController.class
+com/test/sampleapp/exceptions/NotAllowedOperationException.class
+com/test/sampleapp/repository/ApplicationRepository.class
+com/test/sampleapp/SwaggerConfiguration.class
+com/test/sampleapp/Application.class
+com/test/sampleapp/domain/ApplicationItem$ApplicationItemBuilder.class
+com/test/sampleapp/web/dto/ApplicationEntry$ApplicationEntryBuilder.class
+com/test/sampleapp/service/ScheduledServiceAction.class
+com/test/sampleapp/web/dto/CustomErrorResponse.class
+com/test/sampleapp/config/ApplicationConfig.class
+com/test/sampleapp/service/ApplicationService.class
+com/test/sampleapp/domain/ApplicationItem.class
+com/test/sampleapp/web/ErrorHandler.class
+com/test/sampleapp/web/dto/ApplicationEntry.class
+com/test/sampleapp/service/ExternalServiceWithSpringRetryAndCircuitBreaker.class

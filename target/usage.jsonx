@@ -1,0 +1,92 @@
+[
+  {
+    "source": "^the client calls /version$",
+    "steps": [
+      {
+        "name": "the client calls /version",
+        "aggregatedDurations": {
+          "average": 0.027413781,
+          "median": 0.027413781
+        },
+        "durations": [
+          {
+            "duration": 0.027413781,
+            "location": "version.feature:3"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^the client receives response status code of (\\d+)$",
+    "steps": [
+      {
+        "name": "the client receives response status code of 200",
+        "aggregatedDurations": {
+          "average": 0.014382206,
+          "median": 0.014382206
+        },
+        "durations": [
+          {
+            "duration": 0.014382206,
+            "location": "health.feature:4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^the client receives server version (.+)$",
+    "steps": [
+      {
+        "name": "the client receives server version 1.0",
+        "aggregatedDurations": {
+          "average": 0.002266727,
+          "median": 0.002266727
+        },
+        "durations": [
+          {
+            "duration": 0.002266727,
+            "location": "version.feature:5"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^the client calls /health$",
+    "steps": [
+      {
+        "name": "the client calls /health",
+        "aggregatedDurations": {
+          "average": 0.945993834,
+          "median": 0.945993834
+        },
+        "durations": [
+          {
+            "duration": 0.945993834,
+            "location": "health.feature:3"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^the client receives status code of (\\d+)$",
+    "steps": [
+      {
+        "name": "the client receives status code of 200",
+        "aggregatedDurations": {
+          "average": 0.000169375,
+          "median": 0.000169375
+        },
+        "durations": [
+          {
+            "duration": 0.000169375,
+            "location": "version.feature:4"
+          }
+        ]
+      }
+    ]
+  }
+]
